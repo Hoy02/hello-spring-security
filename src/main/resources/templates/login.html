@@ -58,6 +58,11 @@
             </div>
         </div>
     </div>
+    <footer class="text-center mt-5">
+        <p th:text="${'실습 수행: ' + #temporals.format(#temporals.createNow(), 'yyyy-MM-dd HH:mm:ss')}"></p>
+        <p>학번: 2171343 성명: 김호영</p>
+    </footer>
 </div>
+
 </body>
 </html>
