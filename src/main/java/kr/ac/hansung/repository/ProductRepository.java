@@ -14,4 +14,6 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
         SELECT p FROM Product p WHERE p.name LIKE %:keyword%
     """)
     Page<Product> findByNameContaining(@Param("keyword") String keyword, Pageable pageable);
+
+    long countByStockEquals(int stock);
 }
