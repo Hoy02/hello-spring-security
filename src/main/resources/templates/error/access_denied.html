@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>접근 거부 - HanSung</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light d-flex align-items-center justify-content-center vh-100">
+
+<div class="text-center p-5 shadow bg-white rounded" style="max-width: 500px;">
+    <h1 class="display-1 fw-bold text-danger">403</h1>
+    <h3 class="fw-bold mb-3">접근 권한이 없습니다.</h3>
+    <p class="text-muted mb-4">
+        요청하신 페이지는 <strong>관리자(ADMIN)</strong> 권한 전용입니다.<br>
+        현재 로그인하신 계정으로는 접근할 수 없습니다.
+    </p>
+    <div class="d-grid gap-2">
+        <a th:href="@{/products}" class="btn btn-primary">상품 목록으로 돌아가기</a>
+        <a th:href="@{/home}" class="btn btn-outline-secondary">홈으로 이동</a>
+    </div>
+    <footer class="text-center mt-5">
+        <p th:text="${'실습 수행: ' + #temporals.format(#temporals.createNow(), 'yyyy-MM-dd HH:mm:ss') + ' | 학번: 2171343 | 성명: 김호영'}"></p>
+    </footer>
+</div>
+
+</body>
+</html>
